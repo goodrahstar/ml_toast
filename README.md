@@ -4,6 +4,28 @@
 
 **Disclaimer: This is not an official Google product.**
 
+# Using on custom data
+'''
+
+#@title Use the library to determine topics for all input groups
+import pandas as pd
+
+df = pd.read_csv('/content/chrome_history.csv')
+df['Title'] = df['Title'].astype('str')
+terms_input_data_dict = {'input_terms': df}
+
+for key, terms_input_data in terms_input_data_dict.items():
+  topic_clustering = topic_clustering_lib.TopicClustering(
+      data_id=key,
+      input_col='Title',
+      stop_words=None,
+      do_hdbscan_hyperopt=True)
+  topics_kmeans, topics_hdbscan = topic_clustering.determine_topics(
+      terms_input_data)
+  terms_input_data['Topic'] = topics_kmeans
+  terms_input_data['Additional Topics'] = topics_hdbscan
+'''
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google/ml_toast/blob/main/ml_toast.ipynb)
 
 [What it solves](#challenges) •
