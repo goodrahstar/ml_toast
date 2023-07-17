@@ -7,6 +7,18 @@
 # Using on custom data
 
 ```
+!pip install -q tensorflow-text hdbscan umap-learn
+
+#@title Import the topic clustering library
+!echo "Restoring working directory to root..."
+%cd /content
+!rm -rf ml_toast && git clone https://github.com/google/ml_toast.git
+!echo "Changing working directory to ml_toast..."
+%cd ml_toast
+
+from ml_toast import topic_clustering as topic_clustering_lib
+
+
 #@title Use the library to determine topics for all input groups
 import pandas as pd
 
