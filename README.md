@@ -5,8 +5,8 @@
 **Disclaimer: This is not an official Google product.**
 
 # Using on custom data
-'''
 
+```
 #@title Use the library to determine topics for all input groups
 import pandas as pd
 
@@ -24,7 +24,7 @@ for key, terms_input_data in terms_input_data_dict.items():
       terms_input_data)
   terms_input_data['Topic'] = topics_kmeans
   terms_input_data['Additional Topics'] = topics_hdbscan
-'''
+```
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/google/ml_toast/blob/main/ml_toast.ipynb)
 
